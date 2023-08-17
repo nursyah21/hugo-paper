@@ -1085,6 +1085,8 @@ body {
 }
 
 .link {
+  --tw-text-opacity: 1;
+  color: rgb(147 197 253 / var(--tw-text-opacity));
   transition-duration: 200ms;
 }
 

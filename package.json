@@ -3,15 +3,15 @@
   "version": "6.20.0",
   "repository": "https://github.com/nanxiaobei/hugo-paper.git",
   "author": "nanxiaobei <nanxiaobei@gmail.com>",
-  "license": "MIT",
+  "license": "MIT", 
   "scripts": {
     "__FOR_DEV__": "please change all `192.168.0.102` to your local IP",
-    "dev:tailwind": "pnpm tailwindcss -i ./assets/app.css -o ./assets/main.css --watch",
-    "dev:server": "hugo server --buildDrafts --watch --minify --disableFastRender --themesDir=../.. --source=exampleSite --baseURL=192.168.0.102 --bind=192.168.0.102 --port=1313",
-    "dev:open": "open http://192.168.0.102:1313/",
+    "tailwind": "pnpm tailwindcss -i ./assets/app.css -o ./assets/main.css --watch",
+    "serve": "hugo server -D --port 1311 & pnpm dev:open",
+    "dev:open": "open http://localhost:1311",
     "build:go": "cp exampleSite/go.default.mod exampleSite/go.mod",
     "build:generate": "hugo --gc --minify --themesDir=../.. --source=exampleSite --config=go.toml,config.toml",
-    "dev": "killall hugo & pnpm dev:tailwind & pnpm dev:server & pnpm dev:open",
+    "dev": "pnpm dev:tailwind & pnpm dev:server & pnpm dev:open 2>/dev/null",
     "build": "pnpm build:go & pnpm build:generate"
   },
   "dependencies": {
